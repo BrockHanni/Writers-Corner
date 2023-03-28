@@ -1,2 +1,1 @@
 # Writers-Corner
-Brock Hanni
