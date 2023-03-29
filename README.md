@@ -1,7 +1,5 @@
 # Writers-Corner
 
-
-
 ## User Story
 As students, we get easily distracted by outside factors, like gaming, sleeping, family, etc. So we will create an app to help silence the distractions, and focus on whatever we need to work on, by putting everything we need onto the page.
 
@@ -13,3 +11,6 @@ As students, we get easily distracted by outside factors, like gaming, sleeping,
 -Has a working chat GPT section
 -Able to click a button to change the background of the webpage
 -Calculator/dictionary section
+
+![Layout Plan](assets/Images/image.png)
+
