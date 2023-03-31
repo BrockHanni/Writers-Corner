@@ -29,3 +29,20 @@ todoList.addEventListener("click", function(event) {
       localStorage.setItem("todoListItems", todoList.innerHTML);
     }
 });
+
+// buttons for wallpaper
+var bluebutton = document.querySelector("#wallpaper1");
+var gamecubebutton = document.querySelector("#wallpaper2")
+var oceanbutton = document.querySelector("#wallpaper3")
+
+var body = document.querySelector("body");
+
+// bluebutton.addEventListener("click", () => {
+//   body.style.backgroundImage = " url(./backgrounds/Rainy.gif)";
+// });
+// gamecubebutton.addEventListener("click", () => {
+//   body.style.backgroundImage = "url(./backgrounds/gamegube.gif)";
+// });
+oceanbutton.addEventListener("click",() => {
+  body.style.backgroundImage= url("../Images/Ocean.gif")
+})
