@@ -1,9 +1,7 @@
-* {
-} 
 
 /* Set background color and font family */
 body {
-    background-image: url("./backgrounds/Rainy.gif");
+    background-image: url("../Images/Rainy.gif");
     font-family: Arial, sans-serif;
   }
   
