@@ -1,8 +1,7 @@
-* {
-} 
 
 
 body {
+
     background-image: url("./backgrounds/Rainy.gif");
     font-family: Georgia, 'Times New Roman', Times, serif;
   }
@@ -14,6 +13,10 @@ body {
     width: 150px;
     align-items: center;
     justify-content: center;
+
+    background-image: url("../Images/Rainy.gif");
+    font-family: Arial, sans-serif;
+
   }
   
 
