@@ -89,9 +89,12 @@ body {
   }
 
 
-  .spotifyCard img {
+  .spotifyCard img, .gptCard img, .weatherCard img, .calcCard img, .todoCard img {
     width: 100px;
     margin-right: 10px;
   }
+
+
+
   
   
