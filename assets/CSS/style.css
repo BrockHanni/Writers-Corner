@@ -1,7 +1,7 @@
 
 /* Set background color and font family */
 body {
-    background-image: url("../Images/Rainy.gif");
+    background-image: url("../../assets/Images/Rainy.gif");
     font-family: Arial, sans-serif;
   }
   
@@ -48,27 +48,6 @@ body {
     margin: 20px;
   }
   
-  /* Set the background images for the buttons */
-  #wallpaper1 {
-    background-image: url("./assets/images/wallpaper1.jpg");
-  }
-  
-  #wallpaper2 {
-    background-image: url("./assets/images/wallpaper2.jpg");
-  }
-  
-  #wallpaper3 {
-    background-image: url("./assets/images/wallpaper3.jpg");
-  }
-  
-  #wallpaper4 {
-    background-image: url("./assets/images/wallpaper4.jpg");
-  }
-  
-  #wallpaper5 {
-    background-image: url("./assets/images/wallpaper5.jpg");
-  }
-
   .spotifyCard img {
     width: 100px;
     margin-right: 10px;
