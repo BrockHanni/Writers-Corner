@@ -42,23 +42,23 @@ var winterbutton = document.querySelector("#wallpaper7")
 var body = document.querySelector("body");
 
 bluebutton.addEventListener("click", () => {
-  body.style.backgroundImage = 'url("C:/Users/hanni/OneDrive/Desktop/Coding-2023/Group-Projects/Writers-Corner/assets/Images/blue.gif")';
+  body.style.backgroundImage = 'url("./assets/Images/blue.gif")';
 });
 gamecubebutton.addEventListener("click", () => {
-  body.style.backgroundImage = 'url("C:/Users/hanni/OneDrive/Desktop/Coding-2023/Group-Projects/Writers-Corner/assets/Images/gamecube.gif")';
+  body.style.backgroundImage = 'url("./assets/Images/gamecube.gif")';
 });
 oceanbutton.addEventListener("click",() => {
-  body.style.backgroundImage= 'url("C:/Users/hanni/OneDrive/Desktop/Coding-2023/Group-Projects/Writers-Corner/assets/Images/Ocean.gif")'
+  body.style.backgroundImage= 'url("./assets/Images/Ocean.gif")'
 })
 rainybutton.addEventListener("click",() => {
-  body.style.backgroundImage= 'url("C:/Users/hanni/OneDrive/Desktop/Coding-2023/Group-Projects/Writers-Corner/assets/Images/Rainy.gif")'
+  body.style.backgroundImage= 'url("./assets/Images/Rainy.gif")'
 })
 sunsetbutton.addEventListener("click",() => {
-  body.style.backgroundImage= 'url("C:/Users/hanni/OneDrive/Desktop/Coding-2023/Group-Projects/Writers-Corner/assets/Images/sunset.gif")'
+  body.style.backgroundImage= 'url("./assets/Images/sunset.gif")'
 })
 treebutton.addEventListener("click",() => {
-  body.style.backgroundImage= 'url("C:/Users/hanni/OneDrive/Desktop/Coding-2023/Group-Projects/Writers-Corner/assets/Images/tree.gif")'
+  body.style.backgroundImage= 'url("./assets/Images/tree.gif")'
 })
 winterbutton.addEventListener("click",() => {
-  body.style.backgroundImage= 'url("C:/Users/hanni/OneDrive/Desktop/Coding-2023/Group-Projects/Writers-Corner/assets/Images/Winter.gif")'
+  body.style.backgroundImage= 'url("./assets/Images/Winter.gif")'
 })
