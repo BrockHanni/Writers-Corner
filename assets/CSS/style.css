@@ -1,38 +1,49 @@
-
+* {
+  box-sizing: border-box;
+} 
 
 body {
-
     background-image: url("./backgrounds/Rainy.gif");
     font-family: Georgia, 'Times New Roman', Times, serif;
   }
 
-  .timeCard {
-    
+
+.timeCard { 
     background-color: rgba(255, 255, 255, 0.7);
-    margin: 20px;
-    width: 150px;
+    margin: 70px;
+    margin-left: 90px;
+    width: 340px;
+    height: 100px;
     align-items: center;
     justify-content: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); 
+  }
 
-    background-image: url("../Images/Rainy.gif");
-    font-family: Arial, sans-serif;
-
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 2fr;
+    grid-gap: 20px;
+    
   }
   
 
   .spotifyCard, .gptCard, .weatherCard, .calcCard, .todoCard {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 2fr;
-    grid-gap: 20px;
+    width: 500px;
     margin: 20px;
     padding: 20px;
     background-color: rgba(255, 255, 255, 0.7); 
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); 
   }
+
+   .spotifyCard img, .gptCard img, .weatherCard img, .calcCard img, .todoCard img {
+    width: 100px;
+    margin-right: 10px;
+  }
   
 
   h1 {
+    font-family: monospace;
     font-size: 24px;
     margin: 0;
     padding: 10px 0;
@@ -52,7 +63,7 @@ body {
   }
   
   .btn:hover {
-    background-color: rgba(255, 255, 255, 0.9); 
+    background-color: black; 
   }
   
  
@@ -92,12 +103,27 @@ body {
   }
 
 
-  .spotifyCard img, .gptCard img, .weatherCard img, .calcCard img, .todoCard img {
+  #add-item-btn {
+    height: 25px;
     width: 100px;
-    margin-right: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+  }
+  #add-item-btn:hover {
+    box-shadow: inset black 50%;
   }
 
-
+  @media screen and (max-width: 600px) {
+    .grid-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .spotifyCard, .gptCard, .weatherCard, .calcCard, .todoCard {
+      width: 90%;
+    }
+  }
+  
 
   
   
