@@ -34,15 +34,31 @@ todoList.addEventListener("click", function(event) {
 var bluebutton = document.querySelector("#wallpaper1");
 var gamecubebutton = document.querySelector("#wallpaper2")
 var oceanbutton = document.querySelector("#wallpaper3")
+var rainybutton = document.querySelector("#wallpaper4")
+var sunsetbutton = document.querySelector("#wallpaper5")
+var treebutton = document.querySelector("#wallpaper6")
+var winterbutton = document.querySelector("#wallpaper7")
 
 var body = document.querySelector("body");
 
-// bluebutton.addEventListener("click", () => {
-//   body.style.backgroundImage = " url(./backgrounds/Rainy.gif)";
-// });
-// gamecubebutton.addEventListener("click", () => {
-//   body.style.backgroundImage = "url(./backgrounds/gamegube.gif)";
-// });
+bluebutton.addEventListener("click", () => {
+  body.style.backgroundImage = 'url("./assets/Images/blue.gif")';
+});
+gamecubebutton.addEventListener("click", () => {
+  body.style.backgroundImage = 'url("./assets/Images/gamecube.gif")';
+});
 oceanbutton.addEventListener("click",() => {
-  body.style.backgroundImage= url("../Images/Ocean.gif")
+  body.style.backgroundImage= 'url("./assets/Images/Ocean.gif")'
+})
+rainybutton.addEventListener("click",() => {
+  body.style.backgroundImage= 'url("./assets/Images/Rainy.gif")'
+})
+sunsetbutton.addEventListener("click",() => {
+  body.style.backgroundImage= 'url("./assets/Images/sunset.gif")'
+})
+treebutton.addEventListener("click",() => {
+  body.style.backgroundImage= 'url("./assets/Images/tree.gif")'
+})
+winterbutton.addEventListener("click",() => {
+  body.style.backgroundImage= 'url("./assets/Images/Winter.gif")'
 })
