@@ -3,21 +3,21 @@
 } 
 
 body {
-    background-image: url("../../assets/Images/Rainy.gif");
+    background-image: url("../Images/Rainy.gif");
     font-family: Georgia, 'Times New Roman', Times, serif;
   }
 
 
 .timeCard { 
+    border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.7);
-    margin: 70px;
-    margin-left: 90px;
-    width: 340px;
+    margin-top: 175px;
+    margin-left: 175px;
+    width: 200px;
     height: 100px;
     align-items: center;
     justify-content: center;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); 
-    font-family: Arial, sans-serif;
   }
 
 .grid-container {
@@ -30,6 +30,8 @@ body {
   
 
   .spotifyCard, .gptCard, .weatherCard, .calcCard, .todoCard {
+    height: 400px;
+    border-radius: 10px;
     width: 500px;
     margin: 20px;
     padding: 20px;
@@ -74,15 +76,43 @@ body {
     margin: 20px;
   }
   
+
+  #wallpaper1 {
+    background-image: url("/assets/CSS/backgrounds/Rainy.gif");
+  }
+  
+  #wallpaper2 {
+    background-image: url("/assets/CSS/backgrounds/blue.gif");
+  }
+  
+  #wallpaper3 {
+    background-image: url("/assets/CSS/backgrounds/gamecube.gif");
+  }
+  
+  #wallpaper4 {
+    background-image: url("/assets/CSS/backgrounds/Ocean.gif");
+  }
+  
+  #wallpaper5 {
+    background-image: url("/assets/CSS/backgrounds/sunset.gif");
+  }
+
+  #wallpaper6 {
+    background-image: url("/assets/CSS/backgrounds/Winter.gif");
+  }
+
+  #wallpaper7 {
+    background-image: url("/assets/CSS/backgrounds/tree.gif");
+  }
+
+
   #add-item-btn {
     height: 25px;
-
-  .spotifyCard img, .gptCard img, .weatherCard img, .calcCard img, .todoCard img {
-
     width: 100px;
     background-color: rgba(255, 255, 255, 0.7);
     cursor: pointer;
   }
+  
   #add-item-btn:hover {
     box-shadow: inset black 50%;
   }
