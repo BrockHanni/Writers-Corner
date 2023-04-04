@@ -10,7 +10,7 @@ class Calculator {
         this.previousOperand = ''
         this.operation = ''
     }
-    delete() {
+    deleteDigit() {
         this.currentOperand = this.currentOperand.toString().slice(0, -1)
     }
     appendNumber(number) {
@@ -76,7 +76,7 @@ class Calculator {
 const numberButtons = document.querySelectorAll('[data-number]')
 const operationButtons = document.querySelectorAll('[data-operation]')
 const equalsButton = document.querySelector('[data-equals]')
-const deleteButton = document.getElementById('data-delete')
+const deleteButton = document.querySelectorAll('data-delete');
 const allClearButton = document.querySelector('[data-all-clear]')
 const previousOperandTextElement = document.querySelectorAll('[data-previous-operand]')
 const currentOperandTextElement = document.querySelectorAll('[data-current-operand]')
@@ -110,8 +110,8 @@ allClearButton.addEventListener('click', () => {
 })
 
 deleteButton.addEventListener('click', () => {
-    calculator.delete()
-    calculator.updateDisplay()
+    calculator.deleteDigit()
+    calculator.update
 })
 
 // To do list:
