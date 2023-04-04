@@ -1,3 +1,4 @@
+// calculator JavaScript //
 class Calculator {
     constructor(previousOperandTextElement, currentOperandTextElement) {
         this.previousOperandTextElement = previousOperandTextElement[0]
@@ -50,6 +51,23 @@ class Calculator {
         this.operation = ''
         this.previousOperand = ''
     }
+
+    getDisplayNumber(number) {
+        const stringNumber = number.toString()
+        const intergerDigits = parseFloat(stringNumber.split('.')[0])
+        const decimalDigits = stringNumber.split('.')[1]
+        let intergerDisplay 
+        if (isNaN(intergerDigits)){
+            intergerDisplay = ''
+        } else {
+            intergerDisplay = intergerDigits.toLocaleString('en', {
+                maximumSignificantDigits: 0 })
+        }
+        if (decimalDigits != mull) {
+
+        }
+    }
+
     updateDisplay() {
         this.currentOperandTextElement.innerText = this.currentOperand + '' + this.operation
         this.previousOperandTextElement.innerText = this.previousOperand + '' + this.operation
