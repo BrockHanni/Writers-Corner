@@ -22,7 +22,7 @@ function updateTime() {
 
   const currentTimeString = `${hours}:${minutes}:${seconds} ${amPm}`;
 
-  document.getElementById("currentTime").innerHTML = `Your current time is ${currentTimeString}`;
+  document.getElementById("currentTime").innerHTML = ` ${currentTimeString}`;
 }
 setInterval(updateTime, 1000);
 
