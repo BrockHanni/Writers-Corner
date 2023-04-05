@@ -63,7 +63,7 @@ class Calculator {
             intergerDisplay = intergerDigits.toLocaleString('en', {
                 maximumSignificantDigits: 0 })
         }
-        if (decimalDigits != mull) {
+        if (decimalDigits != null) {
 
         }
     }
@@ -76,7 +76,7 @@ class Calculator {
 const numberButtons = document.querySelectorAll('[data-number]')
 const operationButtons = document.querySelectorAll('[data-operation]')
 const equalsButton = document.querySelector('[data-equals]')
-const deleteButton = document.querySelectorAll('data-delete');
+const deleteButton = document.querySelector('[data-delete]');
 const allClearButton = document.querySelector('[data-all-clear]')
 const previousOperandTextElement = document.querySelectorAll('[data-previous-operand]')
 const currentOperandTextElement = document.querySelectorAll('[data-current-operand]')
@@ -111,7 +111,7 @@ allClearButton.addEventListener('click', () => {
 
 deleteButton.addEventListener('click', () => {
     calculator.deleteDigit()
-    calculator.update
+    calculator.updateDisplay()
 })
 
 // To do list:
