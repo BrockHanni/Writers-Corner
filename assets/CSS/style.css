@@ -65,7 +65,9 @@ body {
     margin-right: 10px;
   }
 
-
+.hidden{
+  display:none;
+}
 
   
   
