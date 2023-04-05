@@ -1,3 +1,119 @@
+// calculator JavaScript //
+class Calculator {
+    constructor(previousOperandTextElement, currentOperandTextElement) {
+        this.previousOperandTextElement = previousOperandTextElement[0]
+        this.currentOperandTextElement = currentOperandTextElement[0]
+        this.clear()
+    }
+    clear() {
+        this.currentOperand = ''
+        this.previousOperand = ''
+        this.operation = ''
+    }
+    deleteDigit() {
+        this.currentOperand = this.currentOperand.toString().slice(0, -1)
+    }
+    appendNumber(number) {
+        if (number === '.' && this.currentOperand.includes('.')) return
+        this.currentOperand = this.currentOperand.toString() + number.toString();
+    }
+    chooseOperation(operation) {
+        if (this.currentOperand === '') return
+        if (this.previousOperand !== '') {
+            this.compute()
+        }
+        this.operation = operation
+        this.previousOperand = this.currentOperand
+        this.currentOperand = ''
+    }
+    compute() {
+        let computation
+        const prev = parseFloat(this.previousOperand)
+        const current = parseFloat(this.currentOperand)
+        if (isNaN(prev) || isNaN(current)) return
+        switch (this.operation) {
+            case '+':
+                computation = prev +  current
+                break
+            case '-':
+                computation = prev -  current
+                break
+            case '*':
+                computation = prev *  current
+                break
+            case '÷':
+                computation = prev /  current
+                break
+            default: 
+            return
+        }
+        this.currentOperand = computation
+        this.operation = ''
+        this.previousOperand = ''
+    }
+
+    getDisplayNumber(number) {
+        const stringNumber = number.toString()
+        const intergerDigits = parseFloat(stringNumber.split('.')[0])
+        const decimalDigits = stringNumber.split('.')[1]
+        let intergerDisplay 
+        if (isNaN(intergerDigits)){
+            intergerDisplay = ''
+        } else {
+            intergerDisplay = intergerDigits.toLocaleString('en', {
+                maximumSignificantDigits: 0 })
+        }
+        if (decimalDigits != null) {
+
+        }
+    }
+
+    updateDisplay() {
+        this.currentOperandTextElement.innerText = this.currentOperand + '' + this.operation
+        this.previousOperandTextElement.innerText = this.previousOperand + '' + this.operation
+    }
+}  
+const numberButtons = document.querySelectorAll('[data-number]')
+const operationButtons = document.querySelectorAll('[data-operation]')
+const equalsButton = document.querySelector('[data-equals]')
+const deleteButton = document.querySelector('[data-delete]');
+const allClearButton = document.querySelector('[data-all-clear]')
+const previousOperandTextElement = document.querySelectorAll('[data-previous-operand]')
+const currentOperandTextElement = document.querySelectorAll('[data-current-operand]')
+
+const calculator = new Calculator(previousOperandTextElement, currentOperandTextElement)
+
+numberButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        calculator.appendNumber(button.innerText)
+        calculator.updateDisplay()  
+        
+    })
+})
+
+operationButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        calculator.chooseOperation(button.innerText)
+        calculator.updateDisplay()  
+        
+    })
+})
+
+equalsButton.addEventListener('click', () => {
+    calculator.compute()
+    calculator.updateDisplay()
+})
+
+allClearButton.addEventListener('click', () => {
+    calculator.clear()
+    calculator.updateDisplay()
+})
+
+deleteButton.addEventListener('click', () => {
+    calculator.deleteDigit()
+    calculator.updateDisplay()
+})
+
 // To do list:
 var addItemButton = document.querySelector("#add-item-btn");
 var todoList = document.querySelector("#todo-list");
@@ -79,3 +195,93 @@ treebutton.addEventListener("click",() => {
 winterbutton.addEventListener("click",() => {
   body.style.backgroundImage= 'url("./assets/Images/Winter.gif")'
 })
+
+// Weather API Card
+
+//api key
+var APIKey = "daf6739626e4defe871d6e34398cd5af"
+// search button info
+var searchInput = document.getElementById("searchvalue");
+var searchButton = document.getElementById("searchbtn");
+searchButton.addEventListener("click", function(event){
+  var city = searchInput.value;
+  var weatherurl = ("https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIKey + "&units=imperial")
+  event.preventDefault()
+
+  fetch(weatherurl)
+    .then(response => response.json())
+    .then(data => {
+      console.log(data)
+        var cityNameEl= document.getElementById("cityName")
+        cityNameEl.innerHTML= (data.name)
+        var cityDataCardEl= document.getElementById("cityDataCard")
+        cityDataCardEl.innerHTML= ("Weather: " + data.weather[0].description)
+        var cityDataCardTemp= document.getElementById("cityDataCardTemp")
+        cityDataCardTemp.innerHTML= ("Temp: " + data.main.temp + "°F")
+        var cityDataCardHumid= document.getElementById("cityDataCardHumid")
+        cityDataCardHumid.innerHTML = ("Humidity: " + data.main.humidity)
+        var cityDataCardWind= document.getElementById("cityDataCardWind")
+        cityDataCardWind.innerHTML = ("Wind: " + data.wind.speed + "mph")
+    })
+    .catch(error => {
+      console.log(error)
+    });
+
+  var weatherInfo = document.getElementById("weatherInfo")
+  weatherInfo.classList.remove("hidden")
+  var weatherCity = document.getElementById("weatherCity")
+  weatherCity.classList.add("hidden")
+});
+
+
+// reddit api (test)
+var newReddit = document.getElementById("newReddit");
+newReddit.addEventListener("click", function (event) {
+  var element = event.target;
+  if (element.matches("button")) {
+    var userInput = this.querySelector("input").value;
+    localStorage.setItem("redditStorage", JSON.stringify(userInput));
+  }
+});
+
+function openReddit (){
+ 
+  var redditLocalStorage= JSON.parse(localStorage.getItem('redditStorage'))
+  console.log (redditLocalStorage)
+  if (redditLocalStorage) {
+   
+      var changeReddit= ('https://www.reddit.com/r/'+redditLocalStorage+'.json')
+      var subredditTitle = document.getElementById("subredditTitle")
+      
+      subredditTitle.textContent= ("r/" + redditLocalStorage)
+      
+      fetch (changeReddit)
+          .then(result => result.json())
+          .then((output) => {
+            console.log(output.data.children[0].data.selftext)
+            var subredditText = document.getElementById("textContent")
+            subredditText.textContent= (output.data.children[0].data.selftext)
+          updateredditcard(output)
+  })}
+  else{
+      fetch('https://www.reddit.com/r/upliftingnews.json')
+          .then(result => result.json())
+          .then((output) => {
+              console.log(output)
+              console.log(output.data.children[0].data.selftext)
+              var subredditText = document.getElementById("textContent")
+              subredditText.textContent= (output.data.children[0].data.selftext)
+
+          updateredditcard(output)
+          
+          
+  })
+}}
+openReddit()
+
+function updateredditcard (output){
+  console.log (output)
+      var title = (output.data.children[0].data.title);
+      var redditTitle = document.getElementById("Title");
+      redditTitle.innerHTML = (title)
+}

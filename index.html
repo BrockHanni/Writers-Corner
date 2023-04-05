@@ -26,29 +26,82 @@
           </div>
       </div>
         <div class="gptCard">
-          <img src="./assets/Images/cdnlogo.com_ChatGPT.png" alt="ChatGPT logo">ChatGPT
-         <!-- chatGPT api -->
+
+          <img src="./assets/Images/cdnlogo.com_ChatGPT.png" alt="ChatGPT logo">
+         <!--TODO chatGPT api -->
+
+         <h1>Reddit</h1>
+         <br>
+         <br>
+         <h1 id="subredditTitle" style="text-align: center;">r/upliftingnews</h1>
+         <br> 
+         <div id="newReddit" style="text-align: center; text-size-adjust: 50px;"> 
+            <p id ="Title" style="text-align: center; color: black;text-decoration-line:underline;"></p>
+            <p id ="textContent"></p>
+            <input type="text" id="subredditinput" placeholder="subreddit">
+            <button type="submit" id="subredditinputbutton" placeholder="Change Subreddit" onclick="window.location.reload()">Change Subreddit</button>
+        </div>
+        
         </div>
         <div class="weatherCard">
           <img src="./assets/Images/23527-3-weather.png" alt="Weather logo">Weather
           <!-- weatherapi card -->
+          <form id="weatherCity">
+              <label for="search">Search for a city:</label>
+              <input type="text" id="searchvalue" placeholder="Enter a city name">
+              <button id="searchbtn">Search</button>
+          </form>
+
+          <div id="weatherInfo" class="hidden">
+            <h2 id="cityName"></h2>
+            <div id="cityDataCard"></div>
+            <div id="cityDataCardTemp"></div>
+            <div id="cityDataCardHumid"></div>
+            <div id="cityDataCardWind"></div>
+        </div>
         </div>
 
         <div class="calcCard">
-          <img src="./assets/Images/calculator.png" alt="Calculator logo">Calculator
+
+          <img src="./assets/Images/calculator.png" alt="Calculator logo">
+            <h1>Calculator</h1>
+
             <!-- calculator code -->
+            <div class="output">
+                <div data-previous-operand class="previous-operand"></div>
+                <div data-current-operand class="current-operand"></div>
+            </div>
+            <button data-all-clear class="span-two">AC</button>
+            <button data-delete>DEL</button>
+            <button data-operation>÷</button>
+            <button data-number>1</button>
+            <button data-number>2</button>
+            <button data-number>3</button>
+            <button data-operation>*</button>
+            <button data-number>4</button>
+            <button data-number>5</button>
+            <button data-number>6</button>
+            <button data-operation>+</button>
+            <button data-number>7</button>
+            <button data-number>8</button>
+            <button data-number>9</button>
+            <button data-operation>-</button>
+            <button data-number>.</button>
+            <button data-number>0</button>
+            <button data-equals class="span-two">=</button>
         </div>
 
         <div class="todoCard">
           <img src="./assets/Images/clipboard.png" alt="Todo logo">To-do
             <!-- todo list code -->
             <ul id="todo-list">
-                <!-- javascript to create li -->
+                <!-- javascript creates li -->
             </ul>
             <input type="text" id="new-item-input">
+
             <button id="add-item-btn">Add to list</button>
         </div>
-      
+
     </div>
         <div class="wallpaperCard">
           <!-- blue -->
