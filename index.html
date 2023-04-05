@@ -8,25 +8,50 @@
     <title>Writers Corner</title>
   </head>
 
+
   <body>
-        <div class="timeCard">
-            <h1>Time</h1>
-            <!-- date/time -->
-        </div>
+    <div class="grid-container">
         <div class="spotifyCard">
-          <img src="/assets/Images/spotify-logo-png-7066.png" alt="Spotify logo">
+
+          <img src="./assets/Images/spotify-logo-png-7069.png" alt="Spotify logo">
+
             <h1>Spotify</h1>
           <!-- spotify api -->
         </div>
+        <div class="timeCard">
+          <h1>Time</h1>
+          <!-- date/time -->
+      </div>
         <div class="gptCard">
+          <img src="./assets/Images/cdnlogo.com_ChatGPT.png" alt="ChatGPT logo">
             <h1>ChatGPT</h1>
          <!-- chatGPT api -->
         </div>
         <div class="weatherCard">
+          <img src="./assets/Images/23527-3-weather.png" alt="Weather logo">
             <h1>Weather</h1>
           <!-- weatherapi card -->
+          <form id="weatherCity">
+              <label for="search">Search for a city:</label>
+              <input type="text" id="searchvalue" placeholder="Enter a city name">
+              <button id="searchbtn">Search</button>
+          </form>
+
+          <div id="weatherInfo" class="hidden">
+            <h2 id="cityName"></h2>
+            <div id="cityDataCard"></div>
+            <div id="cityDataCardTemp"></div>
+            <div id="cityDataCardHumid"></div>
+            <div id="cityDataCardWind"></div>
         </div>
+        </div>
+
         <div class="calcCard">
+
+
+          <img src="./assets/Images/calculator.png" alt="Calculator logo">
+            <h1>Calculator</h1>
+
             <!-- calculator code -->
             <div class="output">
                 <div data-previous-operand class="previous-operand"></div>
@@ -51,7 +76,9 @@
             <button data-number>0</button>
             <button data-equals class="span-two">=</button>
         </div>
+
         <div class="todoCard">
+          <img src="./assets/Images/clipboard.png" alt="Todo logo">
             <h1>To-do list</h1>
             <!-- todo list code -->
             <ul id="todo-list">
@@ -60,13 +87,27 @@
             <input type="text" id="new-item-input">
             <button id="add-item-btn">Add Item</button>
         </div>
-
+        <div class="calcCard">
+          <img src="/assets/Images/calculator.png" alt="Calculator logo">
+            <h1>Calculator</h1>
+            <!-- calculator code -->
+        </div>
+    </div>
         <div class="wallpaperCard">
-          <button id="wallpaper1" class="btn"></button>
-          <button id="wallpaper2" class="btn"></button>
-          <button id="wallpaper3" class="btn"></button>
-          <button id="wallpaper4" class="btn"></button>
-          <button id="wallpaper5" class="btn"></button>
+          <!-- blue -->
+          <button id="wallpaper1" class="btn">💙</button>
+          <!-- gamecube -->
+          <button id="wallpaper2" class="btn">🎮</button>
+          <!-- ocean -->
+          <button id="wallpaper3" class="btn">🏖️</button>
+          <!-- rainy -->
+          <button id="wallpaper4" class="btn">☔</button>
+          <!-- sunset -->
+          <button id="wallpaper5" class="btn">🌅</button>
+          <!-- tree -->
+          <button id="wallpaper6" class="btn">🍂</button>
+          <!-- winter -->
+          <button id="wallpaper7" class="btn">❄️</button>
         </div>
     <script src="./assets/JS/script.js"></script>
   </body>
