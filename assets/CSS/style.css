@@ -128,7 +128,7 @@ body {
   
   #add-item-btn {
     height: 25px;
-
+  }
   .spotifyCard img, .gptCard img, .weatherCard img, .calcCard img, .todoCard img {
 
     width: 100px;
