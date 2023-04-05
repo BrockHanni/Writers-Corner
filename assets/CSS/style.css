@@ -4,21 +4,22 @@
 } 
 
 body {
-    background-image: url("../../assets/Images/Rainy.gif");
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-left: auto;
+    background-image: url("../Images/Rainy.gif");
+    font-family: 'Lobster', cursive;
   }
 
 
 .timeCard { 
+    border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.7);
-    margin: 70px;
-    margin-left: 90px;
-    width: 340px;
+    margin-top: 25%;
+    margin-left: 25%;
+    width: 200px;
     height: 100px;
     align-items: center;
     justify-content: center;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); 
-    font-family: Arial, sans-serif;
   }
 
   /* Create a grid layout with 2 columns and 3 rows */
@@ -26,13 +27,15 @@ body {
 
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 2fr;
+    grid-template-rows: 1fr 1fr;
     grid-gap: 20px;
-    
   }
   
 
   .spotifyCard, .gptCard, .weatherCard, .calcCard, .todoCard {
+    font-size: 50px;
+    height: 500px;
+    border-radius: 10px;
     width: 500px;
     margin: 20px;
     padding: 20px;
@@ -44,6 +47,7 @@ body {
     width: 100px;
     margin-right: 10px;
   }
+
   /* Calculator */
 .calcCard {
     display: grid;
@@ -126,19 +130,113 @@ body {
     margin: 20px;
   }
   
+
+
+  #wallpaper1 {
+    background-image: url("/assets/CSS/backgrounds/Rainy.gif");
+  }
+  
+  #wallpaper2 {
+    background-image: url("/assets/CSS/backgrounds/blue.gif");
+  }
+  
+  #wallpaper3 {
+    background-image: url("/assets/CSS/backgrounds/gamecube.gif");
+  }
+  
+  #wallpaper4 {
+    background-image: url("/assets/CSS/backgrounds/Ocean.gif");
+  }
+  
+  #wallpaper5 {
+    background-image: url("/assets/CSS/backgrounds/sunset.gif");
+  }
+
+  #wallpaper6 {
+    background-image: url("/assets/CSS/backgrounds/Winter.gif");
+  }
+
+  #wallpaper7 {
+    background-image: url("/assets/CSS/backgrounds/tree.gif");
+  }
+
+
   #add-item-btn {
     height: 25px;
   }
   .spotifyCard img, .gptCard img, .weatherCard img, .calcCard img, .todoCard img {
 
+
+  #add-item-btn {
+    border-radius: 5px;
+    text-align: center;
+    align-items:center;
+    height: 50px;
     width: 100px;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.2);
     cursor: pointer;
   }
-  #add-item-btn:hover {
-    box-shadow: inset black 50%;
+  
+  #add-item-btn :hover {
+    background-color: blue;
   }
 
+
+  #new-item-input {
+    font-size: 20px;
+    border-radius: 3px;
+    height: 50px;
+    width: 450px;
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .marquee {
+    text-align: center;
+    height: 100px;
+    font-size: 50px;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .marquee p {
+    display: block; 
+    margin: 0; 
+    padding: 20px 0;
+    animation: marquee 5s linear infinite;
+  }
+
+  .delete-btn {
+    font-family: 'Lobster', cursive;;
+    margin: 20px;
+    height: 25px;
+    width: 100px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+  }
+  
+  .todoItem {
+    background-color: rgba(255, 255, 255, 0.5);
+    font-size: 20px;
+    
+  }
+
+  
+  @keyframes marquee {
+      0% {
+        transform: translateY(0); 
+      }
+      100% {
+        transform: translateY(-100%); 
+      }
+    }
+  
+  
+    @media screen and (max-width: 600px) {
+      .spotifyCard, .gptCard, .weatherCard, .calcCard, .todoCard {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+      }
+=======
 
 .hidden{
   display:none;
@@ -149,10 +247,24 @@ body {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
+
     }
-    .spotifyCard, .gptCard, .weatherCard, .calcCard, .todoCard {
-      width: 90%;
+    
+    @media screen and (min-width: 601px) and (max-width: 900px) {
+      .spotifyCard, .gptCard, .weatherCard, .calcCard, .todoCard {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+      }
     }
+
+    
+    @media screen and (min-width: 901px) {
+      .spotifyCard, .gptCard, .weatherCard, .calcCard, .todoCard {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto;
+      }
+    }
+    
   }
 
 
