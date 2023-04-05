@@ -166,6 +166,8 @@ body {
   }
   .spotifyCard img, .gptCard img, .weatherCard img, .calcCard img, .todoCard img {
 
+  }
+
 
   #add-item-btn {
     border-radius: 5px;
@@ -230,13 +232,12 @@ body {
       }
     }
   
-  
     @media screen and (max-width: 600px) {
       .spotifyCard, .gptCard, .weatherCard, .calcCard, .todoCard {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
-      }
-=======
+      }}
+
 
 .hidden{
   display:none;
