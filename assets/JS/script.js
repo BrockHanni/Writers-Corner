@@ -232,3 +232,56 @@ searchButton.addEventListener("click", function(event){
   var weatherCity = document.getElementById("weatherCity")
   weatherCity.classList.add("hidden")
 });
+
+
+// reddit api (test)
+var newReddit = document.getElementById("newReddit");
+newReddit.addEventListener("click", function (event) {
+  var element = event.target;
+  if (element.matches("button")) {
+    var userInput = this.querySelector("input").value;
+    localStorage.setItem("redditStorage", JSON.stringify(userInput));
+  }
+});
+
+function openReddit (){
+ 
+  var redditLocalStorage= JSON.parse(localStorage.getItem('redditStorage'))
+  console.log (redditLocalStorage)
+  if (redditLocalStorage) {
+   
+      var changeReddit= ('https://www.reddit.com/r/'+redditLocalStorage+'.json')
+      var subredditTitle = document.getElementById("subredditTitle")
+      
+      subredditTitle.textContent= ("r/" + redditLocalStorage)
+      
+      fetch (changeReddit)
+          .then(result => result.json())
+          .then((output) => {
+            console.log(output.data.children[0].data.selftext)
+            var subredditText = document.getElementById("textContent")
+            subredditText.textContent= (output.data.children[0].data.selftext)
+          updateredditcard(output)
+  })}
+  else{
+      fetch('https://www.reddit.com/r/upliftingnews.json')
+          .then(result => result.json())
+          .then((output) => {
+              console.log(output)
+              console.log(output.data.children[0].data.selftext)
+              var subredditText = document.getElementById("textContent")
+              subredditText.textContent= (output.data.children[0].data.selftext)
+
+          updateredditcard(output)
+          
+          
+  })
+}}
+openReddit()
+
+function updateredditcard (output){
+  console.log (output)
+      var title = (output.data.children[0].data.title);
+      var redditTitle = document.getElementById("Title");
+      redditTitle.innerHTML = (title)
+}
