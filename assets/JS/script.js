@@ -126,6 +126,23 @@ window.addEventListener("load", function() {
     }
 });
 
+function updateTime() {
+  const currentDate = new Date();
+ 
+  let hours = currentDate.getHours();
+  const minutes = currentDate.getMinutes();
+  const seconds = currentDate.getSeconds();
+
+  const amPm = hours >= 12 ? 'PM' : 'AM';
+  hours = hours % 12 || 12;
+
+  const currentTimeString = `${hours}:${minutes}:${seconds} ${amPm}`;
+
+  document.getElementById("currentTime").innerHTML = ` ${currentTimeString}`;
+}
+setInterval(updateTime, 1000);
+
+
 addItemButton.addEventListener("click", function() {
     var todoNew = document.createElement("li");
     var deletebtnTodo = document.createElement("button");
