@@ -253,7 +253,7 @@ body {
       .spotifyCard, .gptCard, .weatherCard, .calcCard, .todoCard {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
-      }
+      }}
 
 .hidden{
   display:none;
