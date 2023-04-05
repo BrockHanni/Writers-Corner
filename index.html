@@ -31,6 +31,19 @@
           <img src="./assets/Images/23527-3-weather.png" alt="Weather logo">
             <h1>Weather</h1>
           <!-- weatherapi card -->
+          <form id="weatherCity">
+              <label for="search">Search for a city:</label>
+              <input type="text" id="searchvalue" placeholder="Enter a city name">
+              <button id="searchbtn">Search</button>
+          </form>
+
+          <div id="weatherInfo" class="hidden">
+            <h2 id="cityName"></h2>
+            <div id="cityDataCard"></div>
+            <div id="cityDataCardTemp"></div>
+            <div id="cityDataCardHumid"></div>
+            <div id="cityDataCardWind"></div>
+        </div>
         </div>
 
         <div class="calcCard">
