@@ -4,46 +4,35 @@
 } 
 
 body {
+    display: grid;
     margin-left: auto;
     background-image: url("../Images/Rainy.gif");
     font-family: 'Lobster', cursive;
   }
 
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+
 
 .timeCard { 
+    font-family: 'Nabla', cursive;
     border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.7);
     margin-top: 25%;
     margin-left: 25%;
-    width: 200px;
+    width: 300px;
     height: 100px;
     align-items: center;
     justify-content: center;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); 
   }
 
-  /* Create a grid layout with 2 columns and 3 rows */
-  .timeCard, .spotifyCard, .gptCard, .weatherCard, .todoCard .grid-container{
 
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-gap: 20px;
-  }
-
-  .todoCard {
-    font-size: 50px;
-    height: auto;
-    border-radius: 10px;
-    width: 500px;
-    margin: 20px;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.7); 
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); 
-  }
-  
-
-  .spotifyCard, .gptCard, .weatherCard, .calcCard {
+  .spotifyCard, .redditCard, .weatherCard, .todoCard .grid-container, .todoCard {
+    overflow: scroll;
+    justify-content: center;
+    content: center;
     font-size: 50px;
     height: 500px;
     border-radius: 10px;
@@ -54,13 +43,16 @@ body {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); 
   }
 
-   .spotifyCard img, .gptCard img, .weatherCard img, .calcCard img, .todoCard img {
+.spotifyCard img, .redditCard img, .weatherCard img, .calcCard img, .todoCard img {
     width: 100px;
     margin-right: 10px;
   }
 
   /* Calculator */
-.calcCard {
+.calcCard { 
+    font-size: 50px;
+    border-radius: 10px;
+    height: auto;
     display: grid;
     justify-content: center;
     align-content: center;
@@ -76,11 +68,12 @@ body {
     font-size: 2rem;
     border: 1px solid white;
     outline: none;
-    background-color: rgba(150, 200, 200, 0.50);
+    background-color: rgba(239, 245, 245, 0.5);
 }
 
 .calcCard >button:hover {
-    background-color: rgba(150, 200, 200, 0.90);
+  color: white;
+    background-color: rgba(56, 58, 57, 0.9);
 }
 
 .span-two {
@@ -108,18 +101,8 @@ body {
     color: white;
     font-size: 2rem;
 }
-
-  /* Style the heading */
-  h1 {
-    font-family: monospace;
-    font-size: 24px;
-    margin: 0;
-    padding: 10px 0;
-    text-align: center;
-  }
-  
  
-  .btn {
+.btn {
     background-color: rgba(255, 255, 255, 0.7);
     color: #333;
     border: none;
@@ -185,17 +168,18 @@ body {
   }
   
   #add-item-btn:hover {
-    background-color: lime;
+    background-color: rgba(23, 23, 23, 0.7);
   }
 
   #new-item-input {
-    color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    color: black;
     border: none;
     font-size: 20px;
     border-radius: 3px;
     height: 50px;
     width: 450px;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.7);
   }
 
   .delete-btn {
@@ -209,15 +193,18 @@ body {
   }
 
   .delete-btn:hover {
-    background-color: red;
+    background-color: rgba(251, 5, 5, 0.5);;
   }
   
   .todoItem {
+    text-align: center;
+    left: 20px;
+    contain: content;
+    justify-content: center;
     font-size: 20px;;
     width: 200px;
     height: auto;
-    background-color: white;
-    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
     margin: 10px;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease-in-out;
@@ -240,12 +227,12 @@ body {
     display: block; 
     margin: 0; 
     padding: 20px 0;
-    animation: marquee 5s linear infinite;
+    animation: marquee 7s linear infinite forwards;
   }
 
   @keyframes marquee {
-      0% { transform: translateY(0);}
-      100% { transform: translateY(-100%); 
+      0% { transform: translateX(100);}
+      100% { transform: translateX(-100%); 
 }
     }
   
@@ -253,7 +240,9 @@ body {
       .spotifyCard, .gptCard, .weatherCard, .calcCard, .todoCard {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
-      }}
+
+      }
+    }
 
 .hidden{
   display:none;
