@@ -10,7 +10,7 @@ body {
     font-family: 'Lobster', cursive;
   }
 
-  .grid-container {
+.grid-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
@@ -30,6 +30,9 @@ body {
 
 
   .spotifyCard, .redditCard, .weatherCard, .todoCard .grid-container, .todoCard {
+    overflow: scroll;
+    justify-content: center;
+    content: center;
     font-size: 50px;
     height: 500px;
     border-radius: 10px;
@@ -40,7 +43,7 @@ body {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); 
   }
 
-   .spotifyCard img, .redditCard img, .weatherCard img, .calcCard img, .todoCard img {
+.spotifyCard img, .redditCard img, .weatherCard img, .calcCard img, .todoCard img {
     width: 100px;
     margin-right: 10px;
   }
@@ -69,7 +72,8 @@ body {
 }
 
 .calcCard >button:hover {
-    background-color: rgba(116, 239, 157, 0.9);
+  color: white;
+    background-color: rgba(56, 58, 57, 0.9);
 }
 
 .span-two {
@@ -98,7 +102,7 @@ body {
     font-size: 2rem;
 }
  
-  .btn {
+.btn {
     background-color: rgba(255, 255, 255, 0.7);
     color: #333;
     border: none;
@@ -164,17 +168,18 @@ body {
   }
   
   #add-item-btn:hover {
-    background-color: lime;
+    background-color: rgba(23, 23, 23, 0.7);
   }
 
   #new-item-input {
-    color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    color: black;
     border: none;
     font-size: 20px;
     border-radius: 3px;
     height: 50px;
     width: 450px;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.7);
   }
 
   .delete-btn {
@@ -188,15 +193,18 @@ body {
   }
 
   .delete-btn:hover {
-    background-color: red;
+    background-color: rgba(251, 5, 5, 0.5);;
   }
   
   .todoItem {
+    text-align: center;
+    left: 20px;
+    contain: content;
+    justify-content: center;
     font-size: 20px;;
     width: 200px;
     height: auto;
-    background-color: white;
-    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
     margin: 10px;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease-in-out;
@@ -219,7 +227,7 @@ body {
     display: block; 
     margin: 0; 
     padding: 20px 0;
-    animation: marquee 5s linear infinite forwards;
+    animation: marquee 7s linear infinite forwards;
   }
 
   @keyframes marquee {
@@ -234,7 +242,7 @@ body {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
       }
-
+    }
 .hidden{
   display:none;
 }
