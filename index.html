@@ -4,9 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nabla&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/CSS/style.css" />
     <title>Writers Corner</title>
   </head>
+
 
   <body onload="onPageLoad()">
         <div class="timeCard">
@@ -21,8 +27,6 @@
     <button onclick="search()">Search</button>
   <div id="search-results"></div>
   <!-- Should we omit the search function? I couldn't get the pics of the album art to display if I didn't put in the album search feature so that might be better -->
-
-
 
           <!-- spotify api -->
                 <!-- <label for="clientId">Client ID</label>
@@ -87,34 +91,104 @@
 
 
         </div>
+        <div class="timeCard">
+          <div class="marquee">
+            <p id ="currentTime"></p>
+          </div>
+      </div>
         <div class="gptCard">
-            <h1>ChatGPT</h1>
-         <!-- chatGPT api -->
+
+          <img src="./assets/Images/cdnlogo.com_ChatGPT.png" alt="ChatGPT logo">
+         <!--TODO chatGPT api -->
+
+         <h1>Reddit</h1>
+         <br>
+         <br>
+         <h1 id="subredditTitle" style="text-align: center;">r/upliftingnews</h1>
+         <br> 
+         <div id="newReddit" style="text-align: center; text-size-adjust: 50px;"> 
+            <p id ="Title" style="text-align: center; color: black;text-decoration-line:underline;"></p>
+            <p id ="textContent"></p>
+            <input type="text" id="subredditinput" placeholder="subreddit">
+            <button type="submit" id="subredditinputbutton" placeholder="Change Subreddit" onclick="window.location.reload()">Change Subreddit</button>
+        </div>
+        
         </div>
         <div class="weatherCard">
-            <h1>Weather</h1>
+          <img src="./assets/Images/23527-3-weather.png" alt="Weather logo">Weather
           <!-- weatherapi card -->
+          <form id="weatherCity">
+              <label for="search">Search for a city:</label>
+              <input type="text" id="searchvalue" placeholder="Enter a city name">
+              <button id="searchbtn">Search</button>
+          </form>
+
+          <div id="weatherInfo" class="hidden">
+            <h2 id="cityName"></h2>
+            <div id="cityDataCard"></div>
+            <div id="cityDataCardTemp"></div>
+            <div id="cityDataCardHumid"></div>
+            <div id="cityDataCardWind"></div>
         </div>
-        <div class="calcCard">
-            <h1>Calculator</h1>
-            <!-- calculator code -->
-        </div>
-        <div class="todoCard">
-            <h1>To-do list</h1>
-            <!-- todo list code -->
-            <ul id="todo-list">
-                <!-- javascript to create li -->
-            </ul>
-            <input type="text" id="new-item-input">
-            <button id="add-item-btn">Add Item</button>
         </div>
 
+        <div class="calcCard">
+
+          <img src="./assets/Images/calculator.png" alt="Calculator logo">
+            <h1>Calculator</h1>
+
+            <!-- calculator code -->
+            <div class="output">
+                <div data-previous-operand class="previous-operand"></div>
+                <div data-current-operand class="current-operand"></div>
+            </div>
+            <button data-all-clear class="span-two">AC</button>
+            <button data-delete>DEL</button>
+            <button data-operation>÷</button>
+            <button data-number>1</button>
+            <button data-number>2</button>
+            <button data-number>3</button>
+            <button data-operation>*</button>
+            <button data-number>4</button>
+            <button data-number>5</button>
+            <button data-number>6</button>
+            <button data-operation>+</button>
+            <button data-number>7</button>
+            <button data-number>8</button>
+            <button data-number>9</button>
+            <button data-operation>-</button>
+            <button data-number>.</button>
+            <button data-number>0</button>
+            <button data-equals class="span-two">=</button>
+        </div>
+
+        <div class="todoCard">
+          <img src="./assets/Images/clipboard.png" alt="Todo logo">To-do
+            <!-- todo list code -->
+            <ul id="todo-list">
+                <!-- javascript creates li -->
+            </ul>
+            <input type="text" id="new-item-input">
+
+            <button id="add-item-btn">Add to list</button>
+        </div>
+
+    </div>
         <div class="wallpaperCard">
-          <button id="wallpaper1" class="btn"></button>
-          <button id="wallpaper2" class="btn"></button>
-          <button id="wallpaper3" class="btn"></button>
-          <button id="wallpaper4" class="btn"></button>
-          <button id="wallpaper5" class="btn"></button>
+          <!-- blue -->
+          <button id="wallpaper1" class="btn">💙</button>
+          <!-- gamecube -->
+          <button id="wallpaper2" class="btn">🎮</button>
+          <!-- ocean -->
+          <button id="wallpaper3" class="btn">🏖️</button>
+          <!-- rainy -->
+          <button id="wallpaper4" class="btn">☔</button>
+          <!-- sunset -->
+          <button id="wallpaper5" class="btn">🌅</button>
+          <!-- tree -->
+          <button id="wallpaper6" class="btn">🍂</button>
+          <!-- winter -->
+          <button id="wallpaper7" class="btn">❄️</button>
         </div>
     <script src="./assets/JS/script.js"></script>
   </body>

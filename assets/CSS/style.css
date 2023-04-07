@@ -1,26 +1,117 @@
+
 * {
+  box-sizing: border-box;
 } 
 
-/* Set background color and font family */
 body {
-    background-image: url("./backgrounds/Rainy.gif");
-    font-family: Arial, sans-serif;
+    margin-left: auto;
+    background-image: url("../Images/Rainy.gif");
+    font-family: 'Lobster', cursive;
   }
-  
+
+
+.timeCard { 
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    margin-top: 25%;
+    margin-left: 25%;
+    width: 200px;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); 
+  }
+
   /* Create a grid layout with 2 columns and 3 rows */
-  .timeCard, .spotifyCard, .gptCard, .weatherCard, .calcCard, .todoCard {
+  .timeCard, .spotifyCard, .gptCard, .weatherCard, .todoCard .grid-container{
+
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 2fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     grid-gap: 20px;
+  }
+
+  .todoCard {
+    font-size: 50px;
+    height: auto;
+    border-radius: 10px;
+    width: 500px;
     margin: 20px;
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.7); /* Use rgba to set a transparent background */
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* Add a shadow effect */
+    background-color: rgba(255, 255, 255, 0.7); 
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); 
   }
   
+
+  .spotifyCard, .gptCard, .weatherCard, .calcCard {
+    font-size: 50px;
+    height: 500px;
+    border-radius: 10px;
+    width: 500px;
+    margin: 20px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.7); 
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); 
+  }
+
+   .spotifyCard img, .gptCard img, .weatherCard img, .calcCard img, .todoCard img {
+    width: 100px;
+    margin-right: 10px;
+  }
+
+  /* Calculator */
+.calcCard {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    margin: 20px;
+    padding: 75px;
+    background-color: rgba(255, 255, 255, 0.7);
+    grid-template-columns: repeat(4, 90px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 90px);
+}
+
+.calcCard > button {
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid white;
+    outline: none;
+    background-color: rgba(150, 200, 200, 0.50);
+}
+
+.calcCard >button:hover {
+    background-color: rgba(150, 200, 200, 0.90);
+}
+
+.span-two {
+    grid-column: span 2;
+}
+
+.output {
+    grid-column: 1 / -1;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.output .previous-operand {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.5rem;
+}
+
+.output .current-operand {
+    color: white;
+    font-size: 2rem;
+}
+
   /* Style the heading */
   h1 {
+    font-family: monospace;
     font-size: 24px;
     margin: 0;
     padding: 10px 0;
@@ -40,40 +131,159 @@ body {
   }
   
   .btn:hover {
-    background-color: rgba(255, 255, 255, 0.9); /* Change background color on hover */
+    background-color: black; 
   }
   
-  /* Style the wallpaper card */
+ 
   .wallpaperCard {
     display: flex;
     justify-content: center;
     margin: 20px;
   }
   
-  /* Set the background images for the buttons */
+
+
   #wallpaper1 {
-    background-image: url("./assets/images/wallpaper1.jpg");
+    background-image: url("/assets/CSS/backgrounds/Rainy.gif");
   }
   
   #wallpaper2 {
-    background-image: url("./assets/images/wallpaper2.jpg");
+    background-image: url("/assets/CSS/backgrounds/blue.gif");
   }
   
   #wallpaper3 {
-    background-image: url("./assets/images/wallpaper3.jpg");
+    background-image: url("/assets/CSS/backgrounds/gamecube.gif");
   }
   
   #wallpaper4 {
-    background-image: url("./assets/images/wallpaper4.jpg");
+    background-image: url("/assets/CSS/backgrounds/Ocean.gif");
   }
   
   #wallpaper5 {
-    background-image: url("./assets/images/wallpaper5.jpg");
+    background-image: url("/assets/CSS/backgrounds/sunset.gif");
   }
 
-  .spotifyCard img {
-    width: 100px;
-    margin-right: 10px;
+  #wallpaper6 {
+    background-image: url("/assets/CSS/backgrounds/Winter.gif");
   }
+
+  #wallpaper7 {
+    background-image: url("/assets/CSS/backgrounds/tree.gif");
+  }
+
+
+  #add-item-btn {
+    font-family: 'Lobster', cursive;
+    height: 25px;
+    border-radius: 5px;
+    text-align: center;
+    align-items:center;
+    height: 50px;
+    width: 100px;
+    background-color: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+  }
+  
+  #add-item-btn:hover {
+    background-color: lime;
+  }
+
+  #new-item-input {
+    color: white;
+    border: none;
+    font-size: 20px;
+    border-radius: 3px;
+    height: 50px;
+    width: 450px;
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .delete-btn {
+    position: right;
+    font-family: 'Lobster', cursive;;
+    margin: 20px;
+    height: 25px;
+    width: 100px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+  }
+
+  .delete-btn:hover {
+    background-color: red;
+  }
+  
+  .todoItem {
+    font-size: 20px;;
+    width: 200px;
+    height: auto;
+    background-color: white;
+    border-radius: 10px;
+    margin: 10px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+    transform-style: preserve-3d;
+  }
+
+  .todoItem:hover {
+    transform: translateY(-10px);
+  }
+  
+  .marquee {
+    text-align: center;
+    height: 100px;
+    font-size: 50px;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .marquee p {
+    display: block; 
+    margin: 0; 
+    padding: 20px 0;
+    animation: marquee 5s linear infinite;
+  }
+
+  @keyframes marquee {
+      0% { transform: translateY(0);}
+      100% { transform: translateY(-100%); 
+}
+    }
+  
+    @media screen and (max-width: 600px) {
+      .spotifyCard, .gptCard, .weatherCard, .calcCard, .todoCard {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+      }}
+
+.hidden{
+  display:none;
+}
+
+  @media screen and (max-width: 600px) {
+    .grid-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+
+    }
+    
+    @media screen and (min-width: 601px) and (max-width: 900px) {
+      .spotifyCard, .gptCard, .weatherCard, .calcCard, .todoCard {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+      }
+    }
+
+    
+    @media screen and (min-width: 901px) {
+      .spotifyCard, .gptCard, .weatherCard, .calcCard, .todoCard {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto;
+      }
+    }
+    
+  }
+
+
   
   
