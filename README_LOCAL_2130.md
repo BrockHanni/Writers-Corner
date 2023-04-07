@@ -1,2 +1,0 @@
-# Writers-Corner
-- Kole Lam
