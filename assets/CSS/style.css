@@ -236,13 +236,14 @@ body {
 }
     }
   
-  
     @media screen and (max-width: 600px) {
       .spotifyCard, .gptCard, .weatherCard, .calcCard, .todoCard {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
+
       }
     }
+
 .hidden{
   display:none;
 }
