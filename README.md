@@ -1,4 +1,11 @@
 # Writers-Corner
+Writers-Corner is the main title of our project. It is devided up into several sections.  Each section has a specific tool to help a student limit the distractions around them.  To do list, Spotify, Calculator and Local Weather are some of the sections.  
+  
+# table of contents
+-User Story
+-Acceptance Critera
+-Technologies
+-other
 
 ## User Story
 As students, we get easily distracted by outside factors, like gaming, sleeping, family, etc. So we will create an app to help silence the distractions, and focus on whatever we need to work on, by putting everything we need onto the page.
@@ -8,9 +15,19 @@ As students, we get easily distracted by outside factors, like gaming, sleeping,
 -Tell the local weather
 -Tell the date and time
 -Has a working spotify section?
--Has a working chat GPT section
 -Able to click a button to change the background of the webpage
--Calculator/dictionary section
+-Calculator section
 
 ![Layout Plan](assets/Images/image.png)
 
+### Technologies
+-HTML
+-CSS: 
+-JavaScript
+-Bootstrap
+-API's 
+
+
+#### Other
+-status
+Project in progress
