@@ -16,13 +16,10 @@
 
   <body onload="onPageLoad()">
         <div class="spotifyCard">
-          <img src="/assets/Images/spotify-logo-png-7069.png" alt="Spotify">Spotify<br>
-    <input type="text" id="search-input">
-    <button onclick="search()">Search</button>
-  <div id="search-results"></div>
-  <!-- Should we omit the search function? I couldn't get the pics of the album art to display if I didn't put in the album search feature so that might be better -->
+          <img src="./assets/Images/spotify-logo-png-7069.png" alt="Spotify">Spotify<br>
 
           <!-- spotify api -->
+
                 <label for="clientId">User ID</label>
                 <input type="text" id="clientId" placeholder="Id Here"> 
                 <br>
@@ -32,10 +29,12 @@
                 <input type="text" id="clientSecret" placeholder=""> 
                 <!--Will also need this text box, same as above except "Client Secret"-->
 
+
             <input type="button" onclick="requestAuthorization()" value="Request Authorization">
               <label for="devices">Devices</label>
               <select id="devices">
               </select> 
+
               <br>
               <!--This is the button that will go beneath "Client Secret" to send the auth token to spotify-->
 
@@ -46,15 +45,18 @@
               <label for="playlists">Playlists</label>
               <select id="playlists">
               </select> 
+
               <!--Just displays playslists connected to the users account-->
 
               <input type="button" onclick="refreshPlaylists()" value="Refresh Playlists"> 
                 <!--searches for playlists-->
 
 
+
               <label for="tracks">Tracks</label>
               <select id="tracks">
               </select> 
+
               <!--Individual tracks in playlist-->
 
               <input type="button" onclick="fetchTracks()" value="Fetch Tracks"> 
@@ -65,10 +67,12 @@
              <!--Allows us to more easily display the album art, couldn't figure it out with just "Track Search"-->
 
              <input type="button" onclick="previous()" value="Prev">
+
                   <input type="button" onclick="play()" value="Play">
                   <input type="button" onclick="shuffle()" value="Shuffle">
                   <input type="button" onclick="pause()" value="Pause">
                   <input type="button" onclick="next()" value="Next"> 
+
             <!--Buttons! Do what you think is best-->
 
 
@@ -86,6 +90,7 @@
                 <!--This should also be good? This functions just for the text input boxes functionality so feel free to leave them if you think that's better-->
 
 
+
         </div>
         <div class="timeCard">
           <div class="marquee">
@@ -94,7 +99,7 @@
       </div>
         <div class="redditCard">
 
-          <img src="/assets/Images/reddit.png" alt="reddit logo">r/upliftingnews
+          <img src="./assets/Images/reddit.png" alt="reddit logo">r/upliftingnews
          <!--TODO chatGPT api -->
 
          
