@@ -5,15 +5,18 @@
 
 body {
     display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr, 1fr);
     margin-left: auto;
     background-image: url("../Images/Rainy.gif");
     font-family: 'Lobster', cursive;
   }
 
+
 .grid-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   }
 
 
