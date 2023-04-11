@@ -164,7 +164,7 @@ todoList.addEventListener("click", function(event) {
 });
 
 // Spotify token retrievel, documentation was provided by Spotify
-var redirect_uri = "http://127.0.0.1:5501/index.html";
+var redirect_uri = "https://brockhanni.github.io/Writers-Corner/";
 
 var client_id = ""; 
 var client_secret = ""; 
