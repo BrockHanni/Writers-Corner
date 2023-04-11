@@ -19,51 +19,76 @@
           <img src="./assets/Images/spotify-logo-png-7069.png" alt="Spotify">Spotify<br>
 
           <!-- spotify api -->
-                <label for="clientId">Client ID</label>
-                <input type="text" id="clientId" placeholder=""> 
+
+                <label for="clientId">User ID</label>
+                <input type="text" id="clientId" placeholder="Id Here"> 
+                <br>
+                <!--Text box that says "Client ID", where you can input the cliend ID code to authenticate browser-->
 
                 <label for="clientSecret">Client Secret</label>
                 <input type="text" id="clientSecret" placeholder=""> 
+                <!--Will also need this text box, same as above except "Client Secret"-->
+
 
             <input type="button" onclick="requestAuthorization()" value="Request Authorization">
               <label for="devices">Devices</label>
               <select id="devices">
               </select> 
 
+              <br>
+              <!--This is the button that will go beneath "Client Secret" to send the auth token to spotify-->
+
               <input type="button" onclick="refreshDevices()" value="Refresh Devices">
               <input type="button" onclick="transfer()" value="Transfer"> 
+              <!--Adds "Refresh Devices" and "Transfer" button functionality. Transfer will let you switch to another device on the list given-->
 
               <label for="playlists">Playlists</label>
               <select id="playlists">
               </select> 
 
+              <!--Just displays playslists connected to the users account-->
+
               <input type="button" onclick="refreshPlaylists()" value="Refresh Playlists"> 
+                <!--searches for playlists-->
+
 
 
               <label for="tracks">Tracks</label>
               <select id="tracks">
               </select> 
 
+              <!--Individual tracks in playlist-->
+
               <input type="button" onclick="fetchTracks()" value="Fetch Tracks"> 
+              <!--Lets us look for individual tracks in albums and playslists-->
 
               <label for="tracks">Album</label>
               <input id="album"> 
+             <!--Allows us to more easily display the album art, couldn't figure it out with just "Track Search"-->
 
-                  <input type="button" onclick="previous()" value="Prev">
+             <input type="button" onclick="previous()" value="Prev">
+
                   <input type="button" onclick="play()" value="Play">
                   <input type="button" onclick="shuffle()" value="Shuffle">
                   <input type="button" onclick="pause()" value="Pause">
                   <input type="button" onclick="next()" value="Next"> 
 
+            <!--Buttons! Do what you think is best-->
 
+
+                  <!-- header: Currently Playing-->
                   <input type="button" onclick="currentlyPlaying()" value="Refresh Currently Playing"> 
+                <!--This was just recommended as a debugging failsafe so i put it in in case it freezes or desyncs from spotify-->
 
-                      <img id="albumImage" src="">
+                    <img id="albumImage" src="">
                       <div id="trackTitle"></div>
                       <div id="trackArtist"></div> 
+                    <!--These MIGHT be good as is? unless you have a better way of formatting this one-->
 
-                  <div id="radioButtons"></div>
-                  <input type="button" onclick="saveNewRadioButton()" value="Add"> 
+                 <div id="radioButtons"></div>
+                <input type="button" onclick="saveNewRadioButton()" value="Add"> 
+                <!--This should also be good? This functions just for the text input boxes functionality so feel free to leave them if you think that's better-->
+
 
 
         </div>
@@ -143,21 +168,21 @@
             </ul>
         </div>
         <div class="wallpaperCard">
-          <!-- blue -->
-          <button id="wallpaper1" class="btn">💙</button>
-          <!-- gamecube -->
-          <button id="wallpaper2" class="btn">🎮</button>
-          <!-- ocean -->
-          <button id="wallpaper3" class="btn">🏖️</button>
-          <!-- rainy -->
-          <button id="wallpaper4" class="btn">☔</button>
-          <!-- sunset -->
-          <button id="wallpaper5" class="btn">🌅</button>
-          <!-- tree -->
-          <button id="wallpaper6" class="btn">🍂</button>
-          <!-- winter -->
-          <button id="wallpaper7" class="btn">❄️</button>
-        </div>
+    <!-- blue -->
+    <button id="wallpaper1" class="btn">💙</button>
+    <!-- gamecube -->
+    <button id="wallpaper2" class="btn">🎮</button>
+    <!-- ocean -->
+    <button id="wallpaper3" class="btn">🏖️</button>
+    <!-- rainy -->
+    <button id="wallpaper4" class="btn">☔</button>
+    <!-- sunset -->
+    <button id="wallpaper5" class="btn">🌅</button>
+    <!-- tree -->
+    <button id="wallpaper6" class="btn">🍂</button>
+    <!-- winter -->
+    <button id="wallpaper7" class="btn">❄️</button>
+  </div>
 
     </div>
     <script src="./assets/JS/script.js"></script>
