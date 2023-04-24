@@ -5,7 +5,7 @@ Writers-Corner is the main title of our project. It is devided up into several s
 -User Story
 -Acceptance Critera
 -Technologies
--other
+-Other
 
 ## User Story
 As students, we get easily distracted by outside factors, like gaming, sleeping, family, etc. So we will create an app to help silence the distractions, and focus on whatever we need to work on, by putting everything we need onto the page.
@@ -24,7 +24,6 @@ As students, we get easily distracted by outside factors, like gaming, sleeping,
 -HTML
 -CSS: 
 -JavaScript
--Bootstrap
 -API's 
 
 
