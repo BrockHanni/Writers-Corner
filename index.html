@@ -158,63 +158,208 @@
     </div>
   </div>
 </div>
-<div class="bg-blue-100 rounded-lg p-4 shadow-md">
-
 
           <!-- Weather API card -->
-          <form id="weatherCity">
-              <label for="search">Search for a city:</label>
-              <input type="text" id="searchvalue" placeholder="Enter a city name">
-              <button id="searchbtn">Search</button>
-          </form>
+          
+<div class="bg-blue-100 rounded-lg p-4 shadow-md">
 
-          <div id="weatherInfo" class="hidden">
-            <h2 id="cityName"></h2>
-            <div id="cityDataCard"></div>
-            <div id="cityDataCardTemp"></div>
-            <div id="cityDataCardHumid"></div>
-            <div id="cityDataCardWind"></div>
-        </div>
-        </div>
+          <div class="weatherCard">
+            <img
+              src="/Images/23527-3-weather.png"
+              alt="Weather logo"
+              class="w-6 h-6 mr-2"
+            />
+            <p class="text-xl font-bold mb-2">Weather</p>
+            <form id="weatherCity" class="flex flex-col">
+              <label for="search" class="mb-2"></label>
+              <input
+                type="text"
+                id="searchvalue"
+                placeholder="Enter a city name"
+                class="py-2 px-4 border border-gray-400 rounded-lg mb-2"
+              />
+              <button
+                id="searchbtn"
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg"
+              >
+                Search
+              </button>
+            </form>
 
-        <div class="calcCard">
-
-          <img src="./assets/Images/calculator.png" alt="Calculator logo">Calculator
-
-            <!-- calculator code -->
-            <div class="output">
-                <div data-previous-operand class="previous-operand"></div>
-                <div data-current-operand class="current-operand"></div>
+            <div id="weatherInfo" class="hidden mt-4">
+              <h2 id="cityName" class="text-lg font-bold mb-2"></h2>
+              <div id="cityDataCard" class="mb-2"></div>
+              <div id="cityDataCardTemp" class="mb-2"></div>
+              <div id="cityDataCardHumid" class="mb-2"></div>
+              <div id="cityDataCardWind"></div>
             </div>
-            <button data-all-clear class="span-two">AC</button>
-            <button data-delete>DEL</button>
-            <button data-operation>÷</button>
-            <button data-number>1</button>
-            <button data-number>2</button>
-            <button data-number>3</button>
-            <button data-operation>*</button>
-            <button data-number>4</button>
-            <button data-number>5</button>
-            <button data-number>6</button>
-            <button data-operation>+</button>
-            <button data-number>7</button>
-            <button data-number>8</button>
-            <button data-number>9</button>
-            <button data-operation>-</button>
-            <button data-number>.</button>
-            <button data-number>0</button>
-            <button data-equals class="span-two">=</button>
+          </div>
         </div>
 
-        <div class="todoCard">
-          <img src="./assets/Images/clipboard.png" alt="Todo logo">To-do
-            <!-- todo list code -->
-            <input type="text" id="new-item-input" placeholder="Enter List Item">
-            <button id="add-item-btn">Add to list</button>
-            <ul id="todo-list">
-              <!-- javascript creates li -->
-            </ul>
+
+    <!-- calculator code -->
+    <div class="bg-blue-100 rounded-lg p-4 shadow-md">
+      <div class="flex items-center mb-4">
+        <img
+          src="/Images/calculator.png"
+          alt="Calculator logo"
+          class="w-6 h-6 mr-2"
+        />
+        <h2 class="text-xl font-bold mb-2">Calculator</h2>
+      </div>
+      <div class="grid grid-cols-4 gap-2 mb-4">
+        <div class="col-span-4 sm:col-span-2">
+          <div
+            class="bg-white border border-gray-300 rounded-lg p-2 text-right text-gray-700 font-mono h-12 overflow-hidden"
+            data-previous-operand
+          ></div>
         </div>
+        <div class="col-span-4 sm:col-span-2">
+          <div
+            class="bg-white border border-gray-300 rounded-lg p-2 text-right text-gray-700 font-mono h-12 overflow-hidden"
+            data-current-operand
+          ></div>
+        </div>
+        <button
+          class="bg-red-500 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-lg col-span-2 btn-all-clear"
+          data-all-clear
+        >
+          AC
+        </button>
+        <button
+          class="bg-red-500 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-lg btn-delete"
+          data-delete
+        >
+          DEL
+        </button>
+        <button
+          class="bg-yellow-500 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-lg btn-operation"
+          data-operation
+        >
+          ÷
+        </button>
+        <button
+          class="bg-blue-500 hover:bg-gray-300 text-white font-bold py-2 px-4 rounded-lg btn-number"
+          data-number
+        >
+          1
+        </button>
+        <button
+          class="bg-blue-500 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded-lg btn-number"
+          data-number
+        >
+          2
+        </button>
+        <button
+          class="bg-blue-500 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded-lg btn-number"
+          data-number
+        >
+          3
+        </button>
+        <button
+          class="bg-yellow-500 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-lg btn-operation"
+          data-operation
+        >
+          *
+        </button>
+        <button
+          class="bg-blue-500 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded-lg btn-number"
+          data-number
+        >
+          4
+        </button>
+        <button
+          class="bg-blue-500 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded-lg btn-number"
+          data-number
+        >
+          5
+        </button>
+        <button
+          class="bg-blue-500 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded-lg btn-number"
+          data-number
+        >
+          6
+        </button>
+        <button
+          class="bg-yellow-500 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-lg btn-operation"
+          data-operation
+        >
+          +
+        </button>
+        <button
+          class="bg-blue-500 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded-lg btn-number"
+          data-number
+        >
+          7
+        </button>
+        <button
+          class="bg-blue-500 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded-lg btn-number"
+          data-number
+        >
+          8
+        </button>
+        <button
+          class="bg-blue-500 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded-lg btn-number"
+          data-number
+        >
+          9
+        </button>
+        <button
+          class="bg-yellow-500 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-lg btn-operation"
+          data-operation
+        >
+          -
+        </button>
+        <button
+          class="bg-yellow-500 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-lg btn-number"
+          data-number
+        >
+          .
+        </button>
+        <button
+          class="bg-blue-500 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-lg btn-number"
+          data-number
+        >
+          0
+        </button>
+        <button
+          class="bg-green-500 hover:bg-green-400 text-white font-bold py-2 px-4 rounded-lg col-span-2 btn-equals"
+          data-equals
+        >
+          =
+        </button>
+      </div>
+    </div>
+
+    <div class="bg-blue-100 rounded-lg p-4 shadow-md">
+      <div class="flex items-center mb-4">
+        <img
+          src="/Images/clipboard.png"
+          alt="Todo logo"
+          class="w-6 h-6 mr-2"
+        />
+        <p class="text-xl font-bold mb-2">To-do</p>
+      </div>
+      <div class="mb-4">
+        <input
+          type="text"
+          id="new-item-input"
+          placeholder="Enter List Item"
+          class="flex-1 py-2 px-3 border border-gray-400 rounded-md mr-2"
+        />
+        <button
+          id="add-item-btn"
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg"
+        >
+          Add to list
+        </button>
+      </div>
+      <ul id="todo-list" class="list-disc list-inside">
+      </ul>
+    </div>
+  </div>
+  <br/>
+
         <div class="wallpaperCard">
     <!-- blue -->
     <button id="wallpaper1" class="btn">💙</button>
