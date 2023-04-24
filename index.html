@@ -4,193 +4,409 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Nabla&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/CSS/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <title>Writers Corner</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/tailwindcss@2.2.15/dist/tailwind.min.css"
+    />
   </head>
+  <br />
 
-
-  <body onload="onPageLoad()">
-        <div class="spotifyCard">
-          <img src="./assets/Images/spotify-logo-png-7069.png" alt="Spotify">Spotify<br>
-
-          <!-- spotify api -->
-
-                <label for="clientId">User ID</label>
-                <input type="text" id="clientId" placeholder="Id Here"> 
-                <br>
-                <!--Text box that says "Client ID", where you can input the cliend ID code to authenticate browser-->
-
-                <label for="clientSecret">Client Secret</label>
-                <input type="text" id="clientSecret" placeholder=""> 
-                <!--Will also need this text box, same as above except "Client Secret"-->
-
-
-            <input type="button" onclick="requestAuthorization()" value="Request Authorization">
-              <label for="devices">Devices</label>
-              <select id="devices">
-              </select> 
-
-              <br>
-              <!--This is the button that will go beneath "Client Secret" to send the auth token to spotify-->
-
-              <input type="button" onclick="refreshDevices()" value="Refresh Devices">
-              <input type="button" onclick="transfer()" value="Transfer"> 
-              <!--Adds "Refresh Devices" and "Transfer" button functionality. Transfer will let you switch to another device on the list given-->
-
-              <label for="playlists">Playlists</label>
-              <select id="playlists">
-              </select> 
-
-              <!--Just displays playslists connected to the users account-->
-
-              <input type="button" onclick="refreshPlaylists()" value="Refresh Playlists"> 
-                <!--searches for playlists-->
-
-
-
-              <label for="tracks">Tracks</label>
-              <select id="tracks">
-              </select> 
-
-              <!--Individual tracks in playlist-->
-
-              <input type="button" onclick="fetchTracks()" value="Fetch Tracks"> 
-              <!--Lets us look for individual tracks in albums and playslists-->
-
-              <label for="tracks">Album</label>
-              <input id="album"> 
-             <!--Allows us to more easily display the album art, couldn't figure it out with just "Track Search"-->
-
-             <input type="button" onclick="previous()" value="Prev">
-
-                  <input type="button" onclick="play()" value="Play">
-                  <input type="button" onclick="shuffle()" value="Shuffle">
-                  <input type="button" onclick="pause()" value="Pause">
-                  <input type="button" onclick="next()" value="Next"> 
-
-            <!--Buttons! Do what you think is best-->
-
-
-                  <!-- header: Currently Playing-->
-                  <input type="button" onclick="currentlyPlaying()" value="Refresh Currently Playing"> 
-                <!--This was just recommended as a debugging failsafe so i put it in in case it freezes or desyncs from spotify-->
-
-                    <img id="albumImage" src="">
-                      <div id="trackTitle"></div>
-                      <div id="trackArtist"></div> 
-                    <!--These MIGHT be good as is? unless you have a better way of formatting this one-->
-
-                 <div id="radioButtons"></div>
-                <input type="button" onclick="saveNewRadioButton()" value="Add"> 
-                <!--This should also be good? This functions just for the text input boxes functionality so feel free to leave them if you think that's better-->
-
-
-
-        </div>
-        <div class="timeCard">
-          <div class="marquee">
-            <p id ="currentTime"></p>
+  <body onload="onPageLoad()" class="bg=[assets/Images/sunset.gif]">
+    <div class="container mx-auto">
+      <div class="grid grid-cols-3 grid-rows-2 gap-4">
+        <div class="bg-blue-100 rounded-lg p-4 shadow-md">
+          <!--Spotify API-->
+          <div class="spotifyCard">
+            <img
+              src="assets/Images/spotify-logo-png-7069.png"
+              alt="Spotify"
+              class="w-6 h-6 mr-2"
+            />
+            <p class="text-xl font-bold mb-2">Spotify</p>
+            <label for="clientId" class="block mb-2"></label>
+            <input
+              type="text"
+              id="clientId"
+              placeholder="User ID"
+              class="block w-full mb-2 p-1 border border-gray-300 rounded"
+            />
+            <label for="clientSecret" class="block mb-2"></label>
+            <input
+              type="text"
+              id="clientSecret"
+              placeholder="Client Secret"
+              class="block w-full mb-2 p-1 border border-gray-300 rounded"
+            />
+            <input
+              type="button"
+              onclick="requestAuthorization()"
+              value="Request Authorization"
+              class="bg-blue-500 text-white px-2 py-1 rounded"
+            />
+            <label for="devices" class="block mb-2"></label>
+            <select
+              id="devices"
+              class="block w-full mb-2 p-1 border border-gray-300 rounded"
+            ></select>
+            <!--Buttons to refresh devices and transfer from one device to the other-->
+            <input
+              type="button"
+              onclick="refreshDevices()"
+              value="Refresh Devices"
+              class="bg-blue-500 text-white px-2 py-1 rounded mr-2"
+            />
+            <input
+              type="button"
+              onclick="transfer()"
+              value="Transfer"
+              class="bg-blue-500 text-white px-2 py-1 rounded"
+            />
+            <label for="playlists" class="block mb-2"></label>
+            <select
+              id="playlists"
+              class="block w-full mb-2 p-1 border border-gray-300 rounded"
+            ></select>
+            <input
+              type="button"
+              onclick="refreshPlaylists()"
+              value="Refresh Playlists"
+              class="bg-blue-500 text-white px-2 py-1 rounded"
+            />
+            <label for="tracks" class="block mb-2"></label>
+            <select
+              id="tracks"
+              class="block w-full mb-2 p-1 border border-gray-300 rounded"
+            >
+              Tracks
+            </select>
+            <button
+              class="px-4 py-2 bg-red-500 text-white rounded-md mr-2"
+              onclick="previous()"
+            >
+              Prev
+            </button>
+            <button
+              class="px-4 py-2 bg-green-500 text-white rounded-md mr-2"
+              onclick="play()"
+            >
+              Play
+            </button>
+            <button
+              class="px-4 py-2 bg-purple-500 text-white rounded-md mr-2"
+              onclick="shuffle()"
+            >
+              Shuffle
+            </button>
+            <button
+              class="px-4 py-2 bg-yellow-500 text-white rounded-md mr-2"
+              onclick="pause()"
+            >
+              Pause
+            </button>
+            <button
+              class="px-4 py-2 bg-blue-600 text-white rounded-md"
+              onclick="next()"
+            >
+              Next
+            </button>
           </div>
-      </div>
-        <div class="redditCard">
-          <img src="./assets/Images/reddit.png" alt="reddit logo"> Reddit
-         <div id="newReddit" style="text-align: center; text-size-adjust: 50px;">
-            <p id="subredditTitle"></p>
-            <p id ="Title" style="text-align: center; color: black;text-decoration-line:underline;"></p>
-            <p id ="textContent"></p>
-            <p>r/<input type="text" id="subredditinput" placeholder="enter your subreddit here"></p>
-            <button type="submit" id="subredditinputbutton" placeholder="Change Subreddit" onclick="window.location.reload()">Change Subreddit</button>
 
-            <h5>Need some help finding the right subreddit? Try these:</h6>
-            <ul>
-              <li>r/upliftingNews</li>
-              <li>r/dadjokes</li>
-              <li>r/goodnews</li>
-              <li>r/crazyideas</li>
-              <li>r/mademesmile</li>
-            </ul>
-        </div>
-        
- 
-        <div class="weatherCard">
-          <img src="./assets/Images/23527-3-weather.png" alt="Weather logo">Weather
-          <!-- weatherapi card -->
-          <form id="weatherCity">
-              <label for="search">Search for a city:</label>
-              <input type="text" id="searchvalue" placeholder="Enter a city name">
-              <button id="searchbtn">Search</button>
-          </form>
-
-          <div id="weatherInfo" class="hidden">
-            <h2 id="cityName"></h2>
-            <div id="cityDataCard"></div>
-            <div id="cityDataCardTemp"></div>
-            <div id="cityDataCardHumid"></div>
-            <div id="cityDataCardWind"></div>
-        </div>
         </div>
 
-        <div class="calcCard">
+        <!-- Time Card Div -->
 
-          <img src="./assets/Images/calculator.png" alt="Calculator logo">Calculator
-
-            <!-- calculator code -->
-            <div class="output">
-                <div data-previous-operand class="previous-operand"></div>
-                <div data-current-operand class="current-operand"></div>
+        <div class="bg-blue-100 rounded-lg p-4 shadow-md">
+          <div class="timeCard text-center text-bold text-4xl">
+            <div class="marquee">
+              <p id="currentTime"></p>
             </div>
-            <button data-all-clear class="span-two">AC</button>
-            <button data-delete>DEL</button>
-            <button data-operation>÷</button>
-            <button data-number>1</button>
-            <button data-number>2</button>
-            <button data-number>3</button>
-            <button data-operation>*</button>
-            <button data-number>4</button>
-            <button data-number>5</button>
-            <button data-number>6</button>
-            <button data-operation>+</button>
-            <button data-number>7</button>
-            <button data-number>8</button>
-            <button data-number>9</button>
-            <button data-operation>-</button>
-            <button data-number>.</button>
-            <button data-number>0</button>
-            <button data-equals class="span-two">=</button>
+          </div>
         </div>
 
-        <div class="todoCard">
-          <img src="./assets/Images/clipboard.png" alt="Todo logo">To-do
-            <!-- todo list code -->
-            <input type="text" id="new-item-input" placeholder="Enter List Item">
-            <button id="add-item-btn">Add to list</button>
-            <ul id="todo-list">
-              <!-- javascript creates li -->
-            </ul>
-        </div>
-        <div class="wallpaperCard">
-    <!-- blue -->
-    <button id="wallpaper1" class="btn">💙</button>
-    <!-- gamecube -->
-    <button id="wallpaper2" class="btn">🎮</button>
-    <!-- ocean -->
-    <button id="wallpaper3" class="btn">🏖️</button>
-    <!-- rainy -->
-    <button id="wallpaper4" class="btn">☔</button>
-    <!-- sunset -->
-    <button id="wallpaper5" class="btn">🌅</button>
-    <!-- tree -->
-    <button id="wallpaper6" class="btn">🍂</button>
-    <!-- winter -->
-    <button id="wallpaper7" class="btn">❄️</button>
-  </div>
+        <!-- Reddit API Div -->
 
+        <div class="bg-blue-100 rounded-lg p-4 shadow-md">
+          <div class="redditCard">
+            <img
+              src="assets/images/reddit.png"
+              alt="reddit logo"
+              class="w-6 h-6 mr-2"
+            />
+            <p class="text-xl font-bold mb-2">r/upliftingnews</p>
+
+            <div id="newReddit" class="text-center">
+              <p
+                id="Title"
+                class="text-center text-black text-bold underline mb-2"
+              ></p>
+              <p id="textContent" class="mb-6"></p>
+              <input
+                type="text"
+                id="subredditinput"
+                placeholder="Subreddit of choice"
+                class="py-2 px-4 border border-gray-400 rounded-lg mb-2"
+              />
+              <button
+                type="submit"
+                id="subredditinputbutton"
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                onclick="window.location.reload()"
+              >
+                Change Subreddit
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Weather API card -->
+
+        <div class="bg-blue-100 rounded-lg p-4 shadow-md">
+          <div class="weatherCard">
+            <img
+              src="assets/Images/23527-3-weather.png"
+              alt="Weather logo"
+              class="w-6 h-6 mr-2"
+            />
+            <p class="text-xl font-bold mb-2">Weather</p>
+            <form id="weatherCity" class="flex flex-col">
+              <label for="search" class="mb-2"></label>
+              <input
+                type="text"
+                id="searchvalue"
+                placeholder="Enter a city name"
+                class="py-2 px-4 border border-gray-400 rounded-lg mb-2"
+              />
+              <button
+                id="searchbtn"
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg"
+              >
+                Search
+              </button>
+            </form>
+
+            <div id="weatherInfo" class="hidden mt-4">
+              <h2 id="cityName" class="text-lg font-bold mb-2"></h2>
+              <div id="cityDataCard" class="mb-2"></div>
+              <div id="cityDataCardTemp" class="mb-2"></div>
+              <div id="cityDataCardHumid" class="mb-2"></div>
+              <div id="cityDataCardWind"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- calculator code -->
+        <div class="bg-blue-100 rounded-lg p-4 shadow-md">
+          <div class="flex items-center mb-4">
+            <img
+              src="assets/Images/calculator.png"
+              alt="Calculator logo"
+              class="w-6 h-6 mr-2"
+            />
+            <h2 class="text-xl font-bold mb-2">Calculator</h2>
+          </div>
+          <div class="grid grid-cols-4 gap-2 mb-4">
+            <div class="col-span-4 sm:col-span-2">
+              <div
+                class="bg-white border border-gray-300 rounded-lg p-2 text-right text-gray-700 font-mono h-12 overflow-hidden"
+                data-previous-operand
+              ></div>
+            </div>
+            <div class="col-span-4 sm:col-span-2">
+              <div
+                class="bg-white border border-gray-300 rounded-lg p-2 text-right text-gray-700 font-mono h-12 overflow-hidden"
+                data-current-operand
+              ></div>
+            </div>
+            <button
+              class="bg-red-500 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-lg col-span-2 btn-all-clear"
+              data-all-clear
+            >
+              AC
+            </button>
+            <button
+              class="bg-red-500 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-lg btn-delete"
+              data-delete
+            >
+              DEL
+            </button>
+            <button
+              class="bg-yellow-500 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-lg btn-operation"
+              data-operation
+            >
+              ÷
+            </button>
+            <button
+              class="bg-blue-500 hover:bg-gray-300 text-white font-bold py-2 px-4 rounded-lg btn-number"
+              data-number
+            >
+              1
+            </button>
+            <button
+              class="bg-blue-500 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded-lg btn-number"
+              data-number
+            >
+              2
+            </button>
+            <button
+              class="bg-blue-500 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded-lg btn-number"
+              data-number
+            >
+              3
+            </button>
+            <button
+              class="bg-yellow-500 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-lg btn-operation"
+              data-operation
+            >
+              *
+            </button>
+            <button
+              class="bg-blue-500 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded-lg btn-number"
+              data-number
+            >
+              4
+            </button>
+            <button
+              class="bg-blue-500 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded-lg btn-number"
+              data-number
+            >
+              5
+            </button>
+            <button
+              class="bg-blue-500 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded-lg btn-number"
+              data-number
+            >
+              6
+            </button>
+            <button
+              class="bg-yellow-500 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-lg btn-operation"
+              data-operation
+            >
+              +
+            </button>
+            <button
+              class="bg-blue-500 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded-lg btn-number"
+              data-number
+            >
+              7
+            </button>
+            <button
+              class="bg-blue-500 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded-lg btn-number"
+              data-number
+            >
+              8
+            </button>
+            <button
+              class="bg-blue-500 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded-lg btn-number"
+              data-number
+            >
+              9
+            </button>
+            <button
+              class="bg-yellow-500 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-lg btn-operation"
+              data-operation
+            >
+              -
+            </button>
+            <button
+              class="bg-yellow-500 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-lg btn-number"
+              data-number
+            >
+              .
+            </button>
+            <button
+              class="bg-blue-500 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-lg btn-number"
+              data-number
+            >
+              0
+            </button>
+            <button
+              class="bg-green-500 hover:bg-green-400 text-white font-bold py-2 px-4 rounded-lg col-span-2 btn-equals"
+              data-equals
+            >
+              =
+            </button>
+          </div>
+        </div>
+
+        <div class="bg-blue-100 rounded-lg p-4 shadow-md">
+          <div class="flex items-center mb-4">
+            <img
+              src="assets/Images/clipboard.png"
+              alt="Todo logo"
+              class="w-6 h-6 mr-2"
+            />
+            <p class="text-xl font-bold mb-2">To-do</p>
+          </div>
+          <div class="mb-4">
+            <input
+              type="text"
+              id="new-item-input"
+              placeholder="Enter List Item"
+              class="flex-1 py-2 px-3 border border-gray-400 rounded-md mr-2"
+            />
+            <button
+              id="add-item-btn"
+              class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg"
+            >
+              Add to list
+            </button>
+          </div>
+          <ul id="todo-list" class="list-disc list-inside"></ul>
+        </div>
+      </div>
+      <br />
+
+      <!-- Wallpaper Div -->
+
+      <div class="bg-blue-100 text-center rounded-lg p-4 shadow-md">
+        <button
+          id="wallpaper1"
+          class="btn text-2xl md:text-3xl lg:text-4xl bg-blue-600 text-white hover:bg-gray[[-600 rounded-xl"
+        >
+          💙
+        </button>
+        <button
+          id="wallpaper2"
+          class="btn text-2xl md:text-3xl lg:text-4xl bg-red-500 text-white hover:bg-gray-600 rounded-xl"
+        >
+          🎮
+        </button>
+        <button
+          id="wallpaper3"
+          class="btn text-2xl md:text-3xl lg:text-4xl bg-yellow-500 text-white hover:bg-gray-600 rounded-xl"
+        >
+          🏖️
+        </button>
+        <button
+          id="wallpaper4"
+          class="btn text-2xl md:text-3xl lg:text-4xl bg-purple-500 text-white hover:bg-gray-600 rounded-xl"
+        >
+          ☔
+        </button>
+        <button
+          id="wallpaper5"
+          class="btn text-2xl md:text-3xl lg:text-4xl bg-yellow-600 text-white hover:bg-gray-600 rounded-xl"
+        >
+          🌅
+        </button>
+        <button
+          id="wallpaper6"
+          class="btn text-2xl md:text-3xl lg:text-4xl bg-red-600 text-white hover:bg-gray-600 rounded-xl"
+        >
+          🍂
+        </button>
+        <button
+          id="wallpaper7"
+          class="btn text-2xl md:text-3xl lg:text-4xl bg-blue-400 text-white hover:bg-gray-600 rounded-xl"
+        >
+          ❄️
+        </button>
+      </div>
     </div>
-    <script src="./assets/JS/script.js"></script>
+    <script src="assets/JS/script.js"></script>
   </body>
 </html>
