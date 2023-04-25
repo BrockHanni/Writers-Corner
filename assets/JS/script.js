@@ -572,7 +572,6 @@ winterbutton.addEventListener("click",() => {
 
 // Weather API Card
 
-//api key
 var APIKey = "daf6739626e4defe871d6e34398cd5af"
 // search button info
 var searchInput = document.getElementById("searchvalue");
@@ -653,4 +652,3 @@ function updateredditcard (output){
       var redditTitle = document.getElementById("Title");
       redditTitle.innerHTML = (title)
 }
-
