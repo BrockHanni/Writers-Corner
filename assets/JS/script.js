@@ -83,7 +83,7 @@ const previousOperandTextElement = document.querySelectorAll('[data-previous-ope
 const currentOperandTextElement = document.querySelectorAll('[data-current-operand]')
 
 const calculator = new Calculator(previousOperandTextElement, currentOperandTextElement)
-// Got some help on chatGBT to help fix thses buttons functions to work correctly //
+// I looked on youtube on how to get theses buttons to work and I got some help on chatGBT to help fix some errors I had //
 numberButtons.forEach(button => {
     button.addEventListener('click', () => {
         calculator.appendNumber(button.innerText)
