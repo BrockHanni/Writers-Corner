@@ -26,6 +26,7 @@ class Calculator {
         this.previousOperand = this.currentOperand
         this.currentOperand = ''
     }
+    // I listened to a youtube video to explain the compute section //
     compute() {
         let computation
         const prev = parseFloat(this.previousOperand)
@@ -51,7 +52,7 @@ class Calculator {
         this.operation = ''
         this.previousOperand = ''
     }
-
+// ChatGPT help with some buges with the getDisplayNumber //
     getDisplayNumber(number) {
         const stringNumber = number.toString()
         const intergerDigits = parseFloat(stringNumber.split('.')[0])
@@ -82,7 +83,7 @@ const previousOperandTextElement = document.querySelectorAll('[data-previous-ope
 const currentOperandTextElement = document.querySelectorAll('[data-current-operand]')
 
 const calculator = new Calculator(previousOperandTextElement, currentOperandTextElement)
-
+// Got some help on chatGBT to help fix thses buttons functions to work correctly //
 numberButtons.forEach(button => {
     button.addEventListener('click', () => {
         calculator.appendNumber(button.innerText)
