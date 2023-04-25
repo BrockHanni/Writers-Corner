@@ -128,79 +128,39 @@
         </div>
 
         <!-- Reddit API Div -->
-
         <div class="bg-blue-100 rounded-lg p-4 shadow-md">
           <div class="redditCard">
-            <img
-              src="assets/images/reddit.png"
-              alt="reddit logo"
-              class="w-6 h-6 mr-2"
-            />
-            <p class="text-xl font-bold mb-2">r/upliftingnews</p>
-
-            <div id="newReddit" class="text-center">
-              <p
-                id="Title"
-                class="text-center text-black text-bold underline mb-2"
-              ></p>
-              <p id="textContent" class="mb-6"></p>
-              <input
-                type="text"
-                id="subredditinput"
-                placeholder="Subreddit of choice"
-                class="py-2 px-4 border border-gray-400 rounded-lg mb-2"
-              />
-              <div class="info-icon">ⓘ</div>
-              
-              
-           <button
-                type="submit"
-                id="subredditinputbutton"
-                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-                onclick="window.location.reload()"
-              >
-                Change Subreddit
-              </button>
-            </div>
+            <img src="./assets/Images/reddit.png" alt="reddit logo"> Reddit
+              <div id="newReddit" style="text-align: center; text-size-adjust: 50px;">
+                <p id="subredditTitle"></p>
+                <p id ="Title" style="text-align: center; color: black;text-decoration-line:underline;"></p>
+                <p id ="textContent"></p>
+                <p>r/<input type="text" id="subredditinput" placeholder="enter your subreddit here"></p>
+                <button class="bg-blue-500 block w-full mb-2 p-1 border border-gray-300 rounded" type="submit" id="subredditinputbutton" placeholder="Change Subreddit" onclick="window.location.reload()">Change Subreddit</button>
+                
+              </div>
           </div>
         </div>
-
-        <!-- Weather API card -->
-
         <div class="bg-blue-100 rounded-lg p-4 shadow-md">
-          <div class="weatherCard">
-            <img
-              src="assets/Images/23527-3-weather.png"
-              alt="Weather logo"
-              class="w-6 h-6 mr-2"
-            />
-            <p class="text-xl font-bold mb-2">Weather</p>
-            <form id="weatherCity" class="flex flex-col">
-              <label for="search" class="mb-2"></label>
-              <input
-                type="text"
-                id="searchvalue"
-                placeholder="Enter a city name"
-                class="py-2 px-4 border border-gray-400 rounded-lg mb-2"
-              />
-              <button
-                id="searchbtn"
-                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg"
-              >
-                Search
-              </button>
-            </form>
+        <div class="weatherCard">
+          <img src="./assets/Images/23527-3-weather.png" alt="Weather logo">Weather
+          <!-- weatherapi card -->
+          <form id="weatherCity">
+              <label for="search">Search for a city:</label>
+              <input type="text" id="searchvalue" placeholder="Enter a city name">
+              <button id="searchbtn" class="bg-blue-500 block w-full mb-2 p-1 border border-gray-300 rounded">Search</button>
+          </form>
 
-            <div id="weatherInfo" class="hidden mt-4">
-              <h2 id="cityName" class="text-lg font-bold mb-2"></h2>
-              <div id="cityDataCard" class="mb-2"></div>
-              <div id="cityDataCardTemp" class="mb-2"></div>
-              <div id="cityDataCardHumid" class="mb-2"></div>
-              <div id="cityDataCardWind"></div>
-            </div>
-          </div>
+          <div id="weatherInfo" class="hidden">
+            <h2 id="cityName"></h2>
+            <div id="cityDataCard"></div>
+            <div id="cityDataCardTemp"></div>
+            <div id="cityDataCardHumid"></div>
+            <div id="cityDataCardWind"></div>
         </div>
-
+        </div>
+      </div>
+     
         <!-- Calculator card -->
 
 
@@ -355,7 +315,7 @@
             />
             <button
               id="add-item-btn"
-              class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg"
+              class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded-lg"
             >
               Add to list
             </button>
